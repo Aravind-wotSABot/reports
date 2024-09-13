@@ -6,7 +6,7 @@ import InvoiceReports from "./components/Reports/InvoiceReports";
 import LeadReports from "./components/Reports/LeadReports";
 import MeetingReports from "./components/Reports/MeetingReports";
 import SalesMetricsReports from "./components/Reports/SalesMetricsReports";
-import { SalesOrderReports } from "./components/Reports/SalesOrderReports";
+import SalesOrderReports from "./components/Reports/SalesOrderReports";
 import { VisitReports } from "./components/Reports/VisitReports";
 import Sidebar from "./components/Sidebar";
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Sidebar />} />
+        <Route path="/" element={<Sidebar />} />
         <Route
           path="/account-and-contact-reports"
           element={<AccountAndContactReports />}

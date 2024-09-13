@@ -9,33 +9,33 @@ import SearchBar from "../SearchBar";
 const SalesMetricsReportsReports = () => {
   const [rowData, setRowData] = useState([
     {
-      report_name: "Sales Cycle Duration Across Owners",
-      description: "Average time taken for Deal won, by Owner Deal",
+      report_name: "Sales Cycle Duration Across ",
+      description: "Average time taken ",
       filter: { dateCreated: new Date().toISOString().split("T")[0] }, // Example filter for today's leads
     },
     {
-      report_name: "Sales Cycle Duration Across Leads Sources",
-      description: "Average time taken for Deal to be won, by Lead Source",
+      report_name: "Sales Cycle Duration Across deal",
+      description: "Leads and their statuses",
       filter: { status: "Open" }, // Example filter for leads by status
     },
     {
-      report_name: "Sales Cycle Duration Across Deals Type",
-      description: "Average time taken for Deal to be won, by type",
+      report_name: "Sales Cycle Duration Across lead",
+      description: "Lead from various sources",
       filter: { source: "Website" }, // Example filter for leads by source
     },
     {
-      report_name: "Overall Sales Duration Across Leads Sources",
-      description: "Average time taken for Lead to be converted to Deal from Leads Source",
+      report_name: "Sales Cycle Duration Owner",
+      description: "Lead by Owner",
       filter: { owner: "John Doe" }, // Example filter for leads by owner
     },
     {
-      report_name: "Overall Sales Duration Across Lead Type",
-      description: "Average time taken for Lead to be converted to Deal of different type",
+      report_name: "Sales Cycle Duration Source",
+      description: "Lead by Industry",
       filter: { industry: "Technology" }, // Example filter for leads by industry
     },
     {
-      report_name: "Lead Conversion Count across Owners",
-      description: "Total number of Lead converted for the past 6 months, by all owners",
+      report_name: "Sales Cycle Duration Industry",
+      description: "Lead converted to Account/Deal/Contact",
       filter: { isConverted: true }, // Example filter for converted leads
     },
   ]);
@@ -46,7 +46,8 @@ const SalesMetricsReportsReports = () => {
       headerName: "Report Name",
       headerCheckboxSelection: true,
       checkboxSelection: true,
-      flex: 1,
+      flex: 2,
+      cellClass: "text-blue-500 font-bold", // Tailwind CSS classes for blue and bold text
     },
     {
       field: "description",
@@ -61,7 +62,6 @@ const SalesMetricsReportsReports = () => {
     };
   }, []);
 
-  // Function to fetch filtered leads from the backend
   const fetchSalesMetrics = async (filter) => {
     try {
       const queryParams = new URLSearchParams(filter).toString();
@@ -87,21 +87,32 @@ const SalesMetricsReportsReports = () => {
       {/* Sidebar */}
       <Sidebar />
       {/* Main Content */}
-      <div className="w-full m-16">
-        <div className="flex justify-end mb-6">
-          <SearchBar />
-        </div>
+      <div className="flex-grow p-8">
+        <div className="bg-white rounded-lg shadow-md p-6 max-w-7xl mt-32">
+          {/* Header and Search Bar */}
+          <div className="flex justify-between items-center mb-6 pl-16 mr-16">
+            <h1 className="text-3xl font-bold mt-8">Sales Metric Reports</h1>
+            <div className="flex items-center space-x-4">
+              {/* Search Bar */}
+              <SearchBar />
+              {/* Create Button */}
+              <button className="bg-blue-500 text-xs text-white px-4 py-2 rounded-xl hover:bg-blue-600 transition-colors">
+                Create
+              </button>
+            </div>
+          </div>
 
-        {/* Reports Table */}
-        <div className="ag-theme-quartz mb-6" style={{ height: "200px" }}>
-          <AgGridReact
-            rowData={rowData}
-            columnDefs={columnDefs}
-            rowSelection={"single"}
-            domLayout="autoHeight"
-            defaultColDef={defaultColDef}
-            onSelectionChanged={handleRowSelection} // Handle row selection
-          />
+          {/* Reports Table */}
+          <div className="ag-theme-quartz pl-16 mb-4 mr-16">
+            <AgGridReact
+              rowData={rowData}
+              columnDefs={columnDefs}
+              rowSelection={"single"}
+              domLayout="autoHeight"
+              defaultColDef={defaultColDef}
+              onSelectionChanged={handleRowSelection} // Handle row selection
+            />
+          </div>
         </div>
       </div>
     </div>
