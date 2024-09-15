@@ -7,7 +7,7 @@ import LeadReports from "./components/Reports/LeadReports";
 import MeetingReports from "./components/Reports/MeetingReports";
 import SalesMetricsReports from "./components/Reports/SalesMetricsReports";
 import SalesOrderReports from "./components/Reports/SalesOrderReports";
-import { VisitReports } from "./components/Reports/VisitReports";
+import VisitReports from "./components/Reports/VisitReports";
 import Sidebar from "./components/Sidebar";
 
 function App() {

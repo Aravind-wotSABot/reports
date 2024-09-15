@@ -24,21 +24,6 @@ const SalesMetricsReportsReports = () => {
       description: "Sales Orders based on Accounts",
       filter: { source: "Website" }, // Example filter for leads by source
     },
-    {
-      report_name: "Sales Cycle Duration Owner",
-      description: "Lead by Owner",
-      filter: { owner: "John Doe" }, // Example filter for leads by owner
-    },
-    {
-      report_name: "Sales Cycle Duration Source",
-      description: "Lead by Industry",
-      filter: { industry: "Technology" }, // Example filter for leads by industry
-    },
-    {
-      report_name: "Sales Cycle Duration Industry",
-      description: "Lead converted to Account/Deal/Contact",
-      filter: { isConverted: true }, // Example filter for converted leads
-    },
   ]);
 
   const [columnDefs] = useState([

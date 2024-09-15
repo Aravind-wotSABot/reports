@@ -23,21 +23,6 @@ const AccountAndContactReports = () => {
       description: "Accounts by Industry",
       filter: { source: "Website" },
     },
-    {
-      report_name: "Account Details",
-      description: "Account detailing",
-      filter: { owner: "John Doe" },
-    },
-    {
-      report_name: "Sales Cycle Duration Source",
-      description: "Lead by industry",
-      filter: { industry: "Technology" },
-    },
-    {
-      report_name: "Sales Cycle Duration industry",
-      description: "Lead converted to Account/Deal/Contact",
-      filter: { isConverted: true },
-    },
   ]);
 
   const [columnDefs] = useState([

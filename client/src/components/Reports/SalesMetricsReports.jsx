@@ -9,33 +9,48 @@ import SearchBar from "../SearchBar";
 const SalesMetricsReportsReports = () => {
   const [rowData, setRowData] = useState([
     {
-      report_name: "Sales Cycle Duration Across ",
-      description: "Average time taken ",
+      report_name: "Sales Cycle Duration Across Owners",
+      description: "Average time taken for Deals won, by Owner deal",
       filter: { dateCreated: new Date().toISOString().split("T")[0] }, // Example filter for today's leads
     },
     {
-      report_name: "Sales Cycle Duration Across deal",
-      description: "Leads and their statuses",
+      report_name: "Sales Cycle Duration Across Lead Sources",
+      description: "Average time taken for Deal to be won, by Lead Source",
       filter: { status: "Open" }, // Example filter for leads by status
     },
     {
-      report_name: "Sales Cycle Duration Across lead",
-      description: "Lead from various sources",
+      report_name: "Sales Cycle Duration Across Deal Type",
+      description: "Average time taken for the Deal to be won, by type",
       filter: { source: "Website" }, // Example filter for leads by source
     },
     {
-      report_name: "Sales Cycle Duration Owner",
-      description: "Lead by Owner",
+      report_name: "Overall Sales Duration Across Lead Sources",
+      description: "Average number of days taken for the Lead to be Converted to deal of different type",
+      filter: { status: "Open" }, // Example filter for leads by status
+    },
+    {
+      report_name: "Overall Sales Duration Across Deal Type",
+      description: "Average time taken for lead to be converted to Deal of different type",
+      filter: { source: "Website" }, // Example filter for leads by source
+    },
+    {
+      report_name: "Lead Conversion Count Across Owners",
+      description: "Total number of Lead converted for the past 6 months, by all owners",
       filter: { owner: "John Doe" }, // Example filter for leads by owner
     },
     {
-      report_name: "Sales Cycle Duration Source",
-      description: "Lead by Industry",
+      report_name: "Lead Conversion Across Sources",
+      description: "Average time taken for Lead Conversion time for the past 6 months, by source",
       filter: { industry: "Technology" }, // Example filter for leads by industry
     },
     {
-      report_name: "Sales Cycle Duration Industry",
-      description: "Lead converted to Account/Deal/Contact",
+      report_name: "Lead Conversion Across Owners",
+      description: "Average Lead Conversion time for the past 6 months, by owner",
+      filter: { isConverted: true }, // Example filter for converted leads
+    },
+    {
+      report_name: "Lead Conversion Across Industries",
+      description: "Average time taken for Lead Conversion time for the past 6 months, by industry",
       filter: { isConverted: true }, // Example filter for converted leads
     },
   ]);

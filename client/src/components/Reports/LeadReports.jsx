@@ -202,7 +202,7 @@ const LeadReports = () => {
       <Sidebar />
       {/* Main Content */}
       <div className="flex-grow p-8">
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-7xl mt-32">
+        <div className="bg-white rounded-lg shadow-md p-6 max-w-7xl mt-32 ">
           {/* Header and Search Bar */}
           <div className="flex justify-between items-center mb-6 pl-16 mr-16">
             <h1 className="text-3xl font-bold mt-8">Leads Reports</h1>
